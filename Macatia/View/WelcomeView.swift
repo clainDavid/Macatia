@@ -26,31 +26,9 @@ struct WelcomeView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        print("Connexion tapped")
-                    }) {
-                        Text("Connexion")
-                            .fontWeight(.bold)
-                            .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.06)
-                            .background(Color.yellow)
-                            .foregroundColor(.black)
-                            .cornerRadius(8)
-                    }
-                    .padding(.horizontal)
+                    CustomButton(title: "Connexion", backgroundColor: Color.yellow, textColor: Color.black, action: { print("Connexion tapped") })
                     
-                    Button(action: {
-                        print("Inscription tapped")
-                    }) {
-                        Text("Inscription")
-                            .fontWeight(.bold)
-                            .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.06)
-                            .background(Color.white)
-                            .foregroundColor(.black)
-                            .cornerRadius(8)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 8).stroke(Color.black, lineWidth: 2)
-                            )
-                    }
+                    BorderedButton(title: "Inscription", backgroundColor: Color.white, borderColor: Color.black, textColor: Color.black, action: { print("Inscription tapped") })
                     .padding(.top, 8)
                     
                     Button(action: {
