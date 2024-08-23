@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct CustomButton: View {
-    var title: String
-    var backgroundColor: Color
-    var textColor: Color
-    var action: () -> Void
+    private var title: String
+    private var backgroundColor: Color
+    private var textColor: Color
+    private var action: () -> Void
+    
+    init(title: String, backgroundColor: Color, textColor: Color, action: @escaping () -> Void) {
+        self.title = title
+        self.backgroundColor = backgroundColor
+        self.textColor = textColor
+        self.action = action
+    }
     
     var body: some View {
         Button(action: action) {

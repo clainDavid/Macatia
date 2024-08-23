@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct BorderedButton: View {
-    var title: String
-    var backgroundColor: Color
-    var borderColor: Color
-    var textColor: Color
-    var action: () -> Void
+    private var title: String
+    private var backgroundColor: Color
+    private var borderColor: Color
+    private var textColor: Color
+    private var action: () -> Void
+    
+    init(title: String, backgroundColor: Color, borderColor: Color, textColor: Color, action: @escaping () -> Void) {
+        self.title = title
+        self.backgroundColor = backgroundColor
+        self.borderColor = borderColor
+        self.textColor = textColor
+        self.action = action
+    }
     
     var body: some View {
         Button(action: action) {
